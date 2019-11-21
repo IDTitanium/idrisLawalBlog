@@ -29,19 +29,27 @@ const actions = {
   fetchPosts(context) {
     fetch({
       query:
-        '{ query{  user(username: "titanium"){publication{posts {title,cuid,coverImage,brief}}}} }'
+        '{ user(username: "titanium"){publication{posts {title,cuid,coverImage,brief}}} }'
     }).then(res => {
       context.commit("setPosts", res.data.user.publication.posts);
     });
   },
-  fetchSinglePostDetail(context) {}
+  fetchSinglePostDetail(context, data) {
+    fetch({
+      query: `{post(cuid: "${data.cuid}") {title,content}}`
+    }).then(res => {
+      context.commit("setSinglePost", res.data.post);
+    });
+  }
 };
 
 const mutations = {
   setPosts(state, data) {
     state.posts = data;
   },
-  setSinglePost(state, data) {}
+  setSinglePost(state, data) {
+    state.singlePost = data;
+  }
 };
 
 export default {

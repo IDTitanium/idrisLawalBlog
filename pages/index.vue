@@ -1,17 +1,17 @@
 <template>
   <div>
     <v-col md="2"></v-col>
-    <div class="intro">{{intro}}</div>
+    <div class="intro">{{ intro }}</div>
     <div class="stack">
       <span class="text-green">I write:</span>
-      {{stacks}}
+      {{ stacks }}
       <v-btn large>
         <a href="cv.pdf" download>Download my CV</a>
       </v-btn>
     </div>
     <div class="stack">
       <span class="text-green">I've Used:</span>
-      {{otherTech}}
+      {{ otherTech }}
     </div>
 
     <v-col md="4"></v-col>
@@ -25,16 +25,12 @@
       <a href="https://linkedin.com/in/idris-lawal-oluwaseun" class="move-down">
         <v-img max-height="5rem" max-width="5rem" src="LinkedIn.png" />
       </a>
-      <!-- <div class="move-down stack">
-        <span class="text-green">Email:</span>
-        {{email}}
-      </div>-->
       <v-spacer />
       <v-img
         max-height="15rem"
         class="move-down ml-6 mr-10"
         max-width="15rem"
-        style="border:solid;border-radius:50%"
+        style="border:solid;border-radius:50%;margin:3rem"
         src="me.jpg"
       />
     </v-row>
@@ -57,12 +53,13 @@ export default {
 
 <style scoped>
 .intro {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: cursive;
+  margin: 2rem;
 }
 
 .stack {
-  margin-top: 2rem;
+  margin: 2rem;
   font-size: 3rem;
   font-family: cursive;
 }
