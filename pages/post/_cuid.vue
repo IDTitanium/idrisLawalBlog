@@ -1,11 +1,13 @@
 <template>
   <div>
-    <v-col md="8">
-      <div class="text-center">
-        <h1>{{ post.title }}</h1>
-        <div class="content" v-html="post.content"></div>
-      </div>
-    </v-col>
+    <v-container fluid>
+      <v-col md="8">
+        <div class="text-center">
+          <h1>{{ post.title }}</h1>
+          <div class="content" v-html="post.content"></div>
+        </div>
+      </v-col>
+    </v-container>
     <Loader />
   </div>
 </template>

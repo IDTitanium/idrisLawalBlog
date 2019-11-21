@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="400" height="450">
+  <v-card class="mx-auto" max-width="400" height="470">
     <v-img :src="postImage" height="200px"></v-img>
     <v-card-title class="word-break">{{ postTitle }}</v-card-title>
     <v-card-text>{{ postBrief }}</v-card-text>

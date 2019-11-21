@@ -3,7 +3,7 @@
     <v-container fluid>
       <div class="cursive-font">My Blog Posts</div>
       <v-row>
-        <v-col cols="4" v-for="(post, index) in posts" :key="index">
+        <v-col md="4" v-for="(post, index) in posts" :key="index">
           <nuxt-link :to="`/post/${post.cuid}`">
             <PostCard
               :postTitle="post.title"
