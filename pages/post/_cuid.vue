@@ -6,6 +6,7 @@
         <div class="content" v-html="post.content"></div>
       </div>
     </v-col>
+    <Loader />
   </div>
 </template>
 
