@@ -56,8 +56,4 @@ export default {
   flex-direction: row;
   margin: 20px;
 }
-
-a {
-  text-decoration: none !important;
-}
 </style>
