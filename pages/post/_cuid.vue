@@ -1,5 +1,9 @@
 <template>
   <div>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/vs.min.css"
+    />
     <v-container fluid>
       <v-col md="8">
         <div class="text-center">
@@ -13,6 +17,9 @@
     <Loader />
   </div>
 </template>
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
 
 <script>
 import Loader from "@/components/Loader";
