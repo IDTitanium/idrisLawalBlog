@@ -2,7 +2,7 @@
   <div>
     <h1>Contact Form</h1>
     <v-col md="8">
-      <v-form netlify>
+      <form netlify>
         <v-text-field
           label="Name"
           placeholder="Enter your name"
@@ -20,7 +20,7 @@
           :rules="[v => !!v || 'This field is required']"
         />
         <v-btn type="submit">Submit</v-btn>
-      </v-form>
+      </form>
     </v-col>
   </div>
 </template>
