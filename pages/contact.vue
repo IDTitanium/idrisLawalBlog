@@ -2,7 +2,7 @@
   <div>
     <h1>Contact Form</h1>
     <v-col md="8">
-      <form netlify>
+      <form name="contact-form" method="POST" netlify>
         <v-text-field
           label="Name"
           placeholder="Enter your name"
