@@ -65,6 +65,11 @@ export default {
           icon: "mdi-apps",
           title: "Blog Posts",
           to: "/blogPosts"
+        },
+        {
+          icon: "mdi-apps",
+          title: "Contact",
+          to: "/contact"
         }
       ],
       miniVariant: false,
