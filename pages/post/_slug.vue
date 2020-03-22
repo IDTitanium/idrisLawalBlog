@@ -50,6 +50,16 @@ export default {
     this.$store.dispatch("getPosts/fetchSinglePostDetail", d).then(() => {
       eventBus.$emit("toggle-loader");
     });    
+  },
+  mounted(){
+    let splitSlug = this.slug.split('-')
+    let lastSlugCuid = splitSlug[splitSlug.length - 1]
+    let d = {
+      cuid: lastSlugCuid
+    }
+    this.$store.dispatch("getPosts/fetchSinglePostDetail", d).then(() => {
+      eventBus.$emit("toggle-loader");
+    });
   }
 };
 </script>
