@@ -5,7 +5,8 @@
       href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/vs.min.css"
     />
     <v-container fluid>
-      <v-col md="8">
+      <v-img max-height="32rem" :src=post.coverImage></v-img>
+      <v-col md="8" offset-md="2">
         <div class="text-center">
           <h1>{{ post.title }}</h1>
           <div class="content">
@@ -29,7 +30,7 @@ export default {
   data() {
     return {
       stuf: "",
-      cuid: this.$route.params.cuid
+      slug: this.$route.params.slug
     };
   },
   components: {
@@ -41,12 +42,14 @@ export default {
     }
   },
   created() {
-    let data = {
-      cuid: this.cuid
-    };
-    this.$store.dispatch("getPosts/fetchSinglePostDetail", data).then(() => {
+    let splitSlug = this.slug.split('-')
+    let lastSlugCuid = splitSlug[splitSlug.length - 1]
+    let d = {
+      cuid: lastSlugCuid
+    }
+    this.$store.dispatch("getPosts/fetchSinglePostDetail", d).then(() => {
       eventBus.$emit("toggle-loader");
-    });
+    });    
   }
 };
 </script>
@@ -62,6 +65,7 @@ export default {
   code {
     width: 100% !important;
     overflow: scroll !important;
+    padding-left: 10px;
   }
 }
 
@@ -69,6 +73,7 @@ export default {
   code {
     width: 100% !important;
     overflow: scroll;
+    padding-left: 10px;
   }
 }
 </style>

@@ -29,14 +29,14 @@ const actions = {
   fetchPosts(context) {
     fetch({
       query:
-        '{ user(username: "titanium"){publication{posts {title,cuid,coverImage,brief}}} }'
+        '{ user(username: "titanium"){publication{posts {title,cuid,coverImage,brief,slug}}} }'
     }).then(res => {
       context.commit("setPosts", res.data.user.publication.posts);
     });
   },
   fetchSinglePostDetail(context, data) {
     fetch({
-      query: `{post(cuid: "${data.cuid}") {title,content}}`
+      query: `{post(cuid: "${data.cuid}") {title,content, coverImage,slug}}`
     }).then(res => {
       context.commit("setSinglePost", res.data.post);
     });

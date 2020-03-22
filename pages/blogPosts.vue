@@ -4,13 +4,14 @@
       <div class="cursive-font">My Blog Posts</div>
       <v-row>
         <v-col md="4" v-for="(post, index) in posts" :key="index">
-          <nuxt-link :to="`/post/${post.cuid}`">
+          <nuxt-link :to="'post/' +post.slug + '-'+ post.cuid">
             <PostCard
               :postTitle="post.title"
               :postImage="post.coverImage ? post.coverImage : defaultImage"
               :postBrief="post.brief"
             />
           </nuxt-link>
+          
         </v-col>
       </v-row>
     </v-container>
@@ -42,7 +43,7 @@ export default {
     this.$store
       .dispatch("getPosts/fetchPosts")
       .then(() => eventBus.$emit("toggle-loader"));
-  }
+  },
 };
 </script>
 
