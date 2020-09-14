@@ -6,7 +6,7 @@ const fetch = createApolloFetch({
 
 fetch.use(({ request, options }, next) => {
   options.headers = {
-    Authorization: "25287bce-f93b-4c44-a0ee-4400dd6826eb"
+    Authorization: "xxxxxx"
   };
   next();
 });
